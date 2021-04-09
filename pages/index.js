@@ -10,6 +10,7 @@ import axios from 'axios';
 const app = () => {
   const router = useRouter();
 
+  const [data, setData] = useState(null);
   const [capital, setCapital] = useState("");
   const [name, setName] = useState("");
   const [currency, setCurrency] = useState("");
@@ -44,14 +45,14 @@ const app = () => {
         };
         
       axios.request(options).then(function (response) {
+          setData(response.data);
           setContent(false);
           setCapital(response.data.capital);
           setName(response.data.name);
           setDial(response.data.calling_code);
           setCurrency(response.data.currency);
           setPopulation(response.data.population_census);
-          setArea(response.data.area);
-          console.log(response.data);        
+          setArea(response.data.area);       
           setContent(true);
           setLoader(false);
   

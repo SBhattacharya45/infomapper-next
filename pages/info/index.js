@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {useRouter} from 'next/router';
 import axios from 'axios';
 
@@ -8,9 +8,14 @@ const infoPage = props => {
 
     const [loader, setLoader] = useState(true);
     const [info, setInfo] = useState(null);
-
+    const [country, setCountry]=useState("");
     const router = useRouter();
-    const country = router.query.country;
+   
+    useEffect(() => {
+     if (router && router.query) {
+      setCountry(router.query.country);
+     }
+    }, [router]);
 
     if(info == null){
             const options = {
@@ -22,7 +27,7 @@ const infoPage = props => {
             'x-rapidapi-host': 'wikiapi.p.rapidapi.com'
         }
     };
-        
+    console.log("requested");    
     axios.request(options).then(function (response) {
         setInfo(response.data);
         console.log("Set loader to false");
@@ -87,7 +92,7 @@ const infoPage = props => {
         </div>
         <div className={classes.infoContainer}>
             <div className={classes.infoHeader}>
-                <h1>{country.toUpperCase()}</h1>
+                <h1>{country}</h1>
             </div>
             {loader 
             ? <div className={classes.loader}><div></div><div></div><div></div><div></div></div>

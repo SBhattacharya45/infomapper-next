@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+.mainContainer{
+  background-color:#218b82;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  align-self: center;
+  font-family: 'Raleway', sans-serif;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  width: 60%;
+  margin: 0;
+  font-size: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #e5db9c;
+}
+
+.mapContainer{
+  width: 80%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px 20px 0 0;
+}
+
+.infoContainer{
+  width: 80%;
+  background-color: white;
+  height: 655px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px 20px 0 0;
+}
+
+.infoHeader {
+  margin-bottom: 20px;
+}
+
+.infoSubBlock{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.infoLeft {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  height: 550px;
+  justify-content: space-around;
+  width: 40%;
+  background-color: #0d6d4598;
+  border-radius: 20px;
+}
+
+.infoRight {
+  font-size: 19px;
+  width: 40%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.infoRight P {
+  margin-block-start: 10px;
+  margin-block-end: 10px;
+}
+
+.lineInfo{
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+/* Loader */
+.loader {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.loader div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #218b82;
+  border-radius: 50%;
+  animation: loader 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #218b82 transparent transparent transparent;
+}
+.loader div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.loader div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.loader div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
